@@ -7,7 +7,7 @@ import {
 
 export const fetchRooms = () => (dispatch) => {
   console.log("Fetch Rooms action");
-  fetch("http://localhost:5000/rooms")
+  fetch("/rooms")
     .then((res) => res.json())
     .then((rooms) =>
       dispatch({
@@ -19,7 +19,7 @@ export const fetchRooms = () => (dispatch) => {
 
 export const fetchBookedRooms = () => (dispatch) => {
   console.log("Fetch Booked Rooms action");
-  fetch("http://localhost:5000/rooms/booked")
+  fetch("/rooms/booked")
     .then((res) => res.json())
     .then((rooms) =>
       dispatch({
@@ -31,7 +31,7 @@ export const fetchBookedRooms = () => (dispatch) => {
 
 export const createRoom = (roomData) => (dispatch) => {
   console.log("Create Room action");
-  fetch("http://localhost:5000/rooms/add", {
+  fetch("/rooms/add", {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -50,8 +50,8 @@ export const createRoom = (roomData) => (dispatch) => {
 export const deleteRoom = (id) => (dispatch) => {
   // console.log("Delete Task action");
   // console.log(id);
-  // console.log(`http://localhost:5000/tasks/${id}`);
-  fetch("http://localhost:5000/rooms/" + id, {
+  // console.log(`/tasks/${id}`);
+  fetch("/rooms/" + id, {
     method: "DELETE",
   })
     .then((res) => res.json())

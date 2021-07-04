@@ -57,7 +57,7 @@ class AllRooms extends Component {
       date: this.state.date,
     };
     console.log(this.state.id);
-    fetch("http://localhost:5000/rooms/book/" + this.state.id, {
+    fetch("/rooms/book/" + this.state.id, {
       method: "POST",
       headers: {
         "content-type": "application/json",

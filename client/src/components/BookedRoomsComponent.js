@@ -14,7 +14,7 @@ class BookedRooms extends React.Component {
   }
 
   handleCheckout = (id) => {
-    fetch("http://localhost:5000/rooms/unbook/" + id, {
+    fetch("/rooms/unbook/" + id, {
       method: "POST",
       headers: {
         "content-type": "application/json",
